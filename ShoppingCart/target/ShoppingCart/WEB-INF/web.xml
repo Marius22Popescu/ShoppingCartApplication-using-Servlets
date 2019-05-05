@@ -1,0 +1,40 @@
+<!-- Here are all the mapping between the servlets and java files and between servlets and url patterns -->
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+  
+  
+  <servlet>
+  <servlet-name>sLogin</servlet-name>
+  <servlet-class>controler.Login</servlet-class>
+  </servlet>
+  
+  <servlet>
+  <servlet-name>sRegister</servlet-name>
+  <servlet-class>controler.Register</servlet-class>
+  </servlet>
+  
+  <servlet>
+  <servlet-name>sUpdateCart</servlet-name>
+  <servlet-class>controler.UpdateCart</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>sLogin</servlet-name>
+  <url-pattern>/login</url-pattern>  
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  <servlet-name>sRegister</servlet-name>
+  <url-pattern>/register</url-pattern>  
+  </servlet-mapping>
+  
+  <servlet-mapping>
+  <servlet-name>sUpdateCart</servlet-name>
+  <url-pattern>/updateCart</url-pattern>
+  </servlet-mapping>
+    
+</web-app>
