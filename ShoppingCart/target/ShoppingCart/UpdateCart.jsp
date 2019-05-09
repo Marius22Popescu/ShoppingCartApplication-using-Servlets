@@ -7,7 +7,7 @@
     <title>Update Values</title>
 </head>
 <body>
-<h2>Enter the new value:</h2>
+<h2>Enter the desired quantity:</h2>
 <form action="updateCart" method="post"> <!-- create an action that will go to the updateCart servlet  -->
     <label>
         <input type="text" name="quantity">  <!-- create an input text called quantity -->

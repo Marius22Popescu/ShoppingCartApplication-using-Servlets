@@ -27,7 +27,7 @@ public class Login extends HttpServlet{
 		PrintWriter pw=res.getWriter();
 		String username = req.getParameter("uname"); //get the user name from the UI
 		String password = req.getParameter("pwd"); //get the password from the UI
-		String passwordDB = "";				//create a variable in order to get the password from db 
+		String passwordDB = "x64";				//create a variable in order to get the password from db 
 		Statement st;
 		//get the user name and password from Db
 		try {
@@ -45,7 +45,6 @@ public class Login extends HttpServlet{
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-			System.out.println("SQL exception at LOG IN");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 			req.getRequestDispatcher("Failure.jsp").forward(req, res);
@@ -67,7 +66,6 @@ public class Login extends HttpServlet{
 		        connection.close();
 			} catch (SQLException e) {
 				e.printStackTrace();
-				System.out.println("SQL exception at display products");
 			} catch (ClassNotFoundException e) {
 				e.printStackTrace();
 			}		
@@ -78,12 +76,13 @@ public class Login extends HttpServlet{
 		}
 		//If the user/password is wrong go to Failure page again 
 		else {
-			pw.println("<h3 style='color:red'>Invalid Username or Password!</h>"); //Display Invalid Password 
-			req.getRequestDispatcher("Failure.jsp").forward(req, res);	//go to Failure.jsp
+			//pw.println("<h3 style='color:red'>Invalid Username or Password!</h>"); //Display Invalid Password 
+			req.getRequestDispatcher("Failure.jsp").forward(req, res);	//go to Failure.jsp 
+			
 			
 		}	
 	}
-	public void doGett(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+	public void doGett(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException, SQLException {
 	doPost(req,res);			
 	}
 }

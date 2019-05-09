@@ -38,7 +38,7 @@ public class Register extends HttpServlet{
 		RequestDispatcher rd= req.getRequestDispatcher("index.jsp"); //Create an RequestDistpatcher in order to forward to the index.js page
 		rd.forward(req, res);
 	}
-	public void doGett(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+	public void doGet(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
 		doPost(req,res);			
 		}
 }

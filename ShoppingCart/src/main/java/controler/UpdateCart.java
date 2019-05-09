@@ -20,15 +20,12 @@ public class UpdateCart extends HttpServlet{
         request.getRequestDispatcher("UpdateCart.jsp").include(request, response); //request the UpdateCar page
         HttpSession session = request.getSession(false);
         String selectedItem = (String) session.getAttribute("itemKey"); //get the selected item name from the UI UpdatedCart.jsp
-        System.out.println("The selected item is: " + selectedItem);
         
         int qty = Integer.parseInt(request.getParameter("quantity")); //get the quantity from the user output 
-        System.out.println(qty + "qty");
         Map<String, Integer> orders = new HashMap<>(); //Create a map in order to store the product and quantity ordered
 		session.removeAttribute("map"); 		//remove old data from the session
 		orders.put(selectedItem, qty);			//put the item name and desire quantity on the orders map
 		session.setAttribute("map", orders);		//set the new attribute for the session to be orders
-		System.out.println("It got till here.");
 		request.getRequestDispatcher("Cart.jsp").forward(request, response); //Create an RequestDistpatcher in order to forward to the cart page
 		
     }

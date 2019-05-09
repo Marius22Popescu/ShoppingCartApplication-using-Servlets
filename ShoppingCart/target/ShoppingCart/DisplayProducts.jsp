@@ -15,7 +15,7 @@
 <table>
     <tr>
         <th>Product Name</th>
-        <th>Quantity</th>
+        <th>Price</th>
     </tr>
     <c:forEach var="value" items="${sessionScope.map}">  <!-- for each loop: for each value in session -->
         <tr>
